@@ -1,10 +1,15 @@
 const username = "admin";
 
-function renderPost(post) {
-    const template = document.getElementById("post-template").content.cloneNode(true);
-    template.querySelector(".username").innerText = post.username;
-    template.querySelector(".message").innerText = post.message;
-    document.getElementById("feed").appendChild(template);
+async function fetchPosts() {
+    const res = await fetch("/api/posts");
+    const posts = await res.json();
+    const feed = document.getElementById("feed");
+    feed.innerHTML = '';
+    posts.forEach(post => {
+        const postDiv = document.createElement("div");
+        postDiv.innerHTML = `<p><strong>${post.username}</strong>: ${post.message}</p><small>${post.timestamp}</small><hr>`;
+        feed.appendChild(postDiv);
+    });
 }
 
 function submitPost() {
@@ -13,10 +18,4 @@ function submitPost() {
     alert("Tweet submitted (not really yet)");
 }
 
-window.onload = () => {
-    const hardcodedPost = {
-        username: "admin",
-        message: "Welcome to Banterbird! This post is hardcoded.",
-    };
-    renderPost(hardcodedPost);
-};
+window.onload = fetchPosts;
