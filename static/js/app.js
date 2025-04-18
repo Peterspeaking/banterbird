@@ -13,10 +13,13 @@ function submitPost() {
     alert("Tweet submitted (not really yet)");
 }
 
-window.onload = () => {
-    const hardcodedPost = {
-        username: "admin",
-        message: "Welcome to Banterbird! This post is hardcoded.",
-    };
-    renderPost(hardcodedPost);
+window.onload = async() => {
+    try{
+        const response = await fetch("/api/posts");
+        const posts = await response.json();
+        posts.forEach(post => renderPost(post));
+    } catch (error) {
+        console.error("An error occurred", error);
+    }
 };
+
