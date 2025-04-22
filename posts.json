@@ -1,6 +1,10 @@
 [
-  {
-    "username": "Mr Speak",
-    "message": "Welcome team 10!"
-  }
+    {
+        "username": "admin",
+        "message": "Happy Monday!"
+    },
+    {
+        "username": "Mr Speak",
+        "message": "Welcome team 10!"
+    }
 ]

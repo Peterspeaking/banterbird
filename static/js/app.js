@@ -11,8 +11,20 @@ function renderPost(post) {
 
 function submitPost() {
   const message = document.getElementById("postInput").value;
-  console.log("Would post:", message);
-  alert("Tweet submitted (not really yet)");
+  try{
+    const response = fetch("/api/add_post", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            username, message
+        })
+    });
+  }catch (error)
+  {
+    console.log("Post failed 😭", error)
+  }
 }
 
 window.onload = async () => {
