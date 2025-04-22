@@ -1,6 +1,58 @@
 [
     {
         "username": "admin",
+        "message": "du du duh du\nmax verstappen"
+    },
+    {
+        "username": "admin",
+        "message": "very nice"
+    },
+    {
+        "username": "admin",
+        "message": "wow"
+    },
+    {
+        "username": "admin",
+        "message": "w"
+    },
+    {
+        "username": "admin",
+        "message": "g"
+    },
+    {
+        "username": "admin",
+        "message": "ergag"
+    },
+    {
+        "username": "admin",
+        "message": "wd"
+    },
+    {
+        "username": "admin",
+        "message": "e"
+    },
+    {
+        "username": "admin",
+        "message": "e"
+    },
+    {
+        "username": "admin",
+        "message": "e"
+    },
+    {
+        "username": "admin",
+        "message": "max verstappen\n"
+    },
+    {
+        "username": "admin",
+        "message": "du du duh du"
+    },
+    {
+        "username": "admin",
+        "message": "wdqdw"
+    },
+    {
+        "username": "admin",
         "message": "Welcome to Banterbird!"
     },
     {
@@ -9,6 +61,6 @@
     },
     {
         "username": "bob",
-        "message": "Just joined. Let’s tweet!"
+        "message": "Just joined. Let\u00e2\u20ac\u2122s tweet!"
     }
 ]
