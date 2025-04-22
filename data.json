@@ -1,5 +1,17 @@
 [
     {
+        "username": "admin",
+        "message": "Happy Wednesday!"
+    },
+    {
+        "username": "admin",
+        "message": "Happy Tuesday!"
+    },
+    {
+        "username": "admin",
+        "message": "Happy monday!"
+    },
+    {
         "message": "Test",
         "username": "admin"
     },
