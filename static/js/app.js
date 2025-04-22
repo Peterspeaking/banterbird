@@ -7,10 +7,22 @@ function renderPost(post) {
     document.getElementById("feed").appendChild(template);
 }
 
-function submitPost() {
+async function submitPost() {
     const message = document.getElementById("postInput").value;
-    console.log("Would post:", message);
-    alert("Tweet submitted (not really yet)");
+    try{
+        const response = await fetch("/api/add_post", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify({
+                username,
+                message,
+            }),
+        })
+    } catch(error){
+        console.log("😔 FAILED", error)
+    }
 }
 
 window.onload = () => {
