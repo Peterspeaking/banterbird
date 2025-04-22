@@ -21,7 +21,7 @@ def get_posts():
             posts.insert(0, new_post) # add the new psot to the top of the file
         with (open("data.json", "w")) as file:
             json.dump(posts, file, indent=4)
-        return jsonify(["Status": "Success"]), 201
+        return jsonify({"Status": "Success"}), 201
 
 if __name__ == '__main__':
     app.run(debug=True)
