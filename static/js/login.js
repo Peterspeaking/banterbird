@@ -25,6 +25,9 @@ window.onload = () => {
                 return;
             }
             console.log("good");
+            let expirationDate = new Date();
+            expirationDate.setTime(expirationDate.getTime() + (7 * 24 * 60 * 60 * 1000)); // 7 days from now
+            document.cookie = "username=" + encodeURIComponent(username) + "; expires=" + expirationDate.toUTCString() + "; path=/";
             window.location.href = "/";
 
         } catch (error) {

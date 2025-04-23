@@ -1,4 +1,4 @@
-const username = "admin";
+let username = "admin";
 
 function renderPost(post) {
     const template = document.getElementById("post-template").content.cloneNode(true);
@@ -7,10 +7,10 @@ function renderPost(post) {
     document.getElementById("feed").appendChild(template);
 }
 
-function submitPost() {
+async function submitPost() {
     const message = document.getElementById("postInput").value;
     try{
-        const response = fetch("/api/add_post", {
+        const response =  await fetch("/api/add_post", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -20,17 +20,42 @@ function submitPost() {
             })
         })
     } catch (error) {
-        console.log("Post failed:", error);
+        console.error("Post failed:", error);
     }
-}
-
-window.onload = async() => {
-    try{
+    try {
+        document.getElementById("feed").innerHTML = "";
+        document.getElementById("postInput").value = "";
         const response = await fetch("/api/posts");
         const posts = await response.json();
         posts.forEach(post => renderPost(post));
     } catch (error) {
         console.error("An error occurred", error);
+    }
+}
+
+window.onload = async() => {
+    let username = "";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let cookies = decodedCookie.split(';');
+    for(let i = 0; i <cookies.length; i++) {
+        let current_cookie = cookies[i].trim();
+        if (current_cookie.startsWith("username=")) {
+            username = current_cookie.substring("username=".length);
+            break;
+        }
+    }
+    if (username) {
+        document.getElementById("username").innerHTML = username;
+        console.log(username);
+        try {
+            const response = await fetch("/api/posts");
+            const posts = await response.json();
+            posts.forEach(post => renderPost(post));
+        } catch (error) {
+            console.error("An error occurred", error);
+        }
+    } else {
+        window.location.href = "/login";
     }
 };
 

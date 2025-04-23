@@ -59,6 +59,10 @@ def new_account():
     return render_template("register.html")
 
 
+@app.route("/logout", methods=['GET'])
+def logout():
+    return render_template("logout.html")
+
 # Other
 @app.route('/api/posts', methods=['GET'])
 def get_posts():
