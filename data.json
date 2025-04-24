@@ -1,6 +1,18 @@
 [
     {
         "username": "admin",
+        "message": "bla"
+    },
+    {
+        "username": "admin",
+        "message": "yo\n"
+    },
+    {
+        "username": "admin",
+        "message": "bla"
+    },
+    {
+        "username": "admin",
         "message": "yo"
     },
     {
