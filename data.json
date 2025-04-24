@@ -1,6 +1,26 @@
 [
     {
         "username": "admin",
+        "message": "yo"
+    },
+    {
+        "username": "admin",
+        "message": "bla\n"
+    },
+    {
+        "username": "admin",
+        "message": "bla\n"
+    },
+    {
+        "username": "admin",
+        "message": "yo, waddup\n"
+    },
+    {
+        "username": "admin",
+        "message": "bla"
+    },
+    {
+        "username": "admin",
         "message": "Welcome to Banterbird!"
     },
     {
