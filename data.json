@@ -1,6 +1,14 @@
 [
     {
         "username": "admin",
+        "message": "How are you doing today? :D"
+    },
+    {
+        "username": "admin",
+        "message": "e"
+    },
+    {
+        "username": "admin",
         "message": "e"
     },
     {
@@ -77,6 +85,6 @@
     },
     {
         "username": "bob",
-        "message": "Just joined. Let\u00e2\u20ac\u2122s tweet!"
+        "message": "Just joined. Let's tweet!"
     }
 ]

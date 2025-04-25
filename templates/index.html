@@ -17,7 +17,7 @@
 <body>
     <h1>Banterbird</h1>
     
-    <div>
+    <div class="loggedIn">
         Logged in as: <strong id="username">admin</strong>
     </div>
     <div>
@@ -25,7 +25,6 @@
         <textarea id="postInput" placeholder="What's on your mind?"></textarea><br>
         <button onclick="submitPost()">Tweet</button>
     </div>
-    <hr>
     <h3>Feed</h3>
     <div id="feed"></div>
 
@@ -33,7 +32,6 @@
         <div class="post">
             <p><strong class="username"></strong>: <span class="message"></span></p>
             <small class="timestamp"></small>
-            <hr>
         </div>
     </template>
 </body>
