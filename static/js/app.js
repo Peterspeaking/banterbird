@@ -18,7 +18,7 @@ async function submitPost() {
             body: JSON.stringify({
                 username,
                 message,
-            }),
+            }),  
         })
     } catch(error){
         console.log("😔 FAILED", error)
