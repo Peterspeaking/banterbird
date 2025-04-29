@@ -1,0 +1,18 @@
+[
+    {
+        "username": "Test",
+        "message": "admin"
+    },
+    {
+        "username": "admin",
+        "message": "welcome to banterbird"
+    },
+    {
+        "username": "chad",
+        "message": "Excited to be here!"
+    },
+    {
+        "username": "bob",
+        "message": "just foined, lets chat"
+    }
+]
