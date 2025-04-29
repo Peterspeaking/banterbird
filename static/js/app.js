@@ -1,4 +1,7 @@
-const username = "admin";
+let username = localStorage.getItem("username");
+if (!username) {
+  window.location.href = "/login";
+}
 
 function renderPost(post) {
   const template = document
@@ -11,24 +14,25 @@ function renderPost(post) {
 
 function submitPost() {
   const message = document.getElementById("postInput").value;
-  try{
+  try {
     const response = fetch("/api/add_post", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            username, message
-        })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        message,
+      }),
     });
-  }catch (error)
-  {
-    console.log("Post failed 😭", error)
+  } catch (error) {
+    console.log("Post failed 😭", error);
   }
 }
 
 window.onload = async () => {
   try {
+    document.getElementById("username").innerText = username;
     const response = await fetch("/api/posts");
     const posts = await response.json();
     posts.forEach((post) => renderPost(post));
