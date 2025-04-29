@@ -1,4 +1,6 @@
-const username = "admin";
+let username = localStorage.getItem("username");
+if (!username) {
+    window.location.href = "/login.html";
 
 function renderPost(post, isnwew = false) {
     const template = document

@@ -6,8 +6,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("html.html")
 
+@app.route('/login')
+def login():
+    return render_template("login.html")
 
 @app.route('/api/posts')
 def get_posts():
