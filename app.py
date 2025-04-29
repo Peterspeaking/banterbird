@@ -7,6 +7,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route('/login')
+def login():
+    return render_template("login.html")
+
 @app.route('/api/posts')
 def get_posts():
     with open ('posts.json', 'r') as file:
