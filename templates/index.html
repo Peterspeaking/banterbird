@@ -2,34 +2,53 @@
 <html>
 <head>
     <title>Banterbird</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="/static/js/index.js"></script>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/login">Login</a> |
-        <a href="/new-account">Register</a> |
-        <a href="/logout">Logout</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <h3 class="navbar-brand">Banterbird</h3>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link disabled" href="#">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="/new-account">Register</a></li>
+            <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+        </ul>
     </nav>
-    <h1>Banterbird</h1>
-    <div>
-        Logged in as: <strong id="username">admin</strong>
-    </div>
-    <div>
-        <h3>New Post</h3>
-        <textarea id="postInput" placeholder="What's on your mind?"></textarea><br>
-        <button onclick="submitPost()">Tweet</button>
-    </div>
-    <hr>
-    <h3>Feed</h3>
-    <div id="feed"></div>
-
-    <template id="post-template">
-        <div class="post">
-            <p><strong class="username"></strong>: <span class="message"></span></p>
-            <small class="timestamp"></small>
-            <hr>
+    <div class="container">
+        <h1>Banterbird</h1>
+        <div>
+            Logged in as: <strong id="username"></strong>
         </div>
-    </template>
-    <script src="/static/js/index.js" defer></script>
+        <div class="container">
+            <div class="row">
+                <div class="col-auto">
+                    <div class="card" style="width: 18rem; height: 18rem;">
+                        <h3 class="card-title"><label for="postInput">Tweet</label></h3>
+                        <textarea class="card-body" id="postInput" placeholder="What's on your mind?"></textarea><br>
+                        <button class="btn btn-primary" onclick="submitPost()">Tweet</button>
+                    </div>
+                </div>
+
+                <div class="col-auto">
+
+                    <div class="card" id="feed" style="width: 18rem; height: 18rem; display: flex; flex-direction: column; overflow-y: scroll;">
+                        <h3 class="card-title">Feed</h3>
+                        <template class="list-group" id="post-template">
+                            <div class="post list-group-item">
+                                <p><strong class="username"></strong>: <span class="message"></span></p>
+                                <small class="timestamp"></small>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

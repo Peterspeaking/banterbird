@@ -1,3 +1,4 @@
+from time import time
 from flask import Flask, render_template, jsonify, request, g
 import json
 import hashlib
@@ -73,6 +74,7 @@ def get_posts():
 @app.route('/api/add_post', methods=['POST'])
 def add_posts():
     new_post = request.get_json()
+    new_post["timestamp"] = int()
     with open("posts.json", "r") as file:
         posts = json.load(file)
     posts.insert(0, new_post)
@@ -99,6 +101,7 @@ def login_data():
             hashed_password = hash_password(password, salt)[0]
             if hashed_password == stored_password:
                 return jsonify({"status": "success"}), 201
+    return jsonify({"status": "fail"}), 401
 
 @app.route("/api/register", methods=['POST'])
 def register_data():
