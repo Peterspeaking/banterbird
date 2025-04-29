@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Banterbird</title>
     <script src="/static/js/app.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Banterbird</h1>
+    <div>Logged in as: <strong id="username">anonymous</strong></div>
     <div>
-        Logged in as: <strong id="username">admin</strong>
+      <h3>New Post</h3>
+      <textarea id="postInput" placeholder="What's on your mind?"></textarea
+      ><br />
+      <button onclick="submitPost()">Tweet</button>
     </div>
-    <div>
-        <h3>New Post</h3>
-        <textarea id="postInput" placeholder="What's on your mind?"></textarea><br>
-        <button onclick="submitPost()">Tweet</button>
-    </div>
-    <hr>
+    <hr />
     <h3>Feed</h3>
     <div id="feed"></div>
 
     <template id="post-template">
-        <div class="post">
-            <p><strong class="username"></strong>: <span class="message"></span></p>
-            <small class="timestamp"></small>
-            <hr>
-        </div>
+      <div class="post">
+        <p><strong class="username"></strong>: <span class="message"></span></p>
+        <small class="timestamp"></small>
+        <hr />
+      </div>
     </template>
-</body>
+    <script>
+      document.getElementById("username").innerText =
+        localStorage.getItem("username");
+    </script>
+  </body>
 </html>
