@@ -10,7 +10,7 @@
                 localStorage.setItem("username", username);
                 window.location.href = '/';
             }else{alert("Please enter a username")}
-            
+            document.getElementById("username").innerText = localStorage.getItem("username");
         }
     </script>
 
