@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Banterbird</title>
+    <title>Tiger Talk</title>
     <script src="/static/js/app.js" defer></script>
+    <link rel="stylesheet" href="/static/css/style.css">
   </head>
   <body>
-    <h1>Banterbird</h1>
+    <h1 id="header1">Tiger Talk</h1>
+    <form class="box">
     <div>Logged in as: <strong id="username">Bob</strong></div>
     <div>
-      <h3>New Post</h3>
-      <textarea id="postInput" placeholder="What's on your mind?"></textarea
-      ><br />
-      <button onclick="submitPost()">Tweet</button>
+      <h3 id="head">New Post</h3>
+      <textarea id="postInput" placeholder="What do you want to ask the Tiger?"></textarea><br>
+      <button onclick="submitPost()" id="talk">Talk</button>
     </div>
     <hr />
     <h3>Feed</h3>
@@ -24,6 +25,7 @@
         <hr />
       </div>
     </template>
+  </form>
     <script>
       document.getElementById("username").innerText =
         localStorage.getItem("username");
