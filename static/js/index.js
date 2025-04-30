@@ -118,7 +118,7 @@ async function show_posts() {
 window.onload = async function() {
     await show_posts();
     while (true) {
-        await sleep(60);
+        await sleep(5);
         await show_posts();
     }
 };
