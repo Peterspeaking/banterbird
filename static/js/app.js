@@ -2,17 +2,17 @@ const username = "admin";
 
 function renderPost(post, isNew = false) {
     const template = document
-        .getElementById("post-template")
-        .content.cloneNode(true);
+      .getElementById("post-template")
+      .content.cloneNode(true);
     template.querySelector(".username").innerText = post.username;
     template.querySelector(".message").innerText = post.message;
-    if(isNew) {
-        document.getElementById("feed").prepend(template);
+  
+    if (isNew) {
+      document.getElementById("feed").prepend(template);
+    } else {
+      document.getElementById("feed").appendChild(template);
     }
-    else{
-        document.getElementById("feed").appendChild(template);
-    }
-}
+  }
 
 async function submitPost() {
     const message = document.getElementById("postInput").value;
@@ -22,7 +22,8 @@ async function submitPost() {
             headers : {"Content-Type": "application/json" },
             body: JSON.stringify({ username, message }),
         });
-        if (response,ok) {
+        console.log("here" , response.ok)
+        if (response.ok) {
             renderPost({ username, message }, true);
             document.getElementById("postInput").value = ""; }
         } catch (error) {

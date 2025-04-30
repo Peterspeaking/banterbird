@@ -1,0 +1,11 @@
+/* style.css */
+
+body {
+    font-family: sans-serif;
+    background-color: #6198ea;
+    padding: 20px;
+}
+
+#feed {
+    margin-top: 30px;
+}
