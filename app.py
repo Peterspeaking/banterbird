@@ -49,7 +49,7 @@ def hash_password( password: str, salt: Optional[bytes] = None) -> tuple[str, by
 # Webpage
 @app.route('/', methods=['GET'])
 def index():
-    return render_template("index.html")
+    return render_template("index4.html")
 
 @app.route("/login", methods=['GET'])
 def login():
