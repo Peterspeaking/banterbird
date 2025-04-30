@@ -1,0 +1,174 @@
+#button {
+    width: 100px;
+    height: 25px;
+    border: none;
+    outline: none;
+    font-family: "Roboto Flex", sans-serif;
+    background: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+#button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+#button:active {
+    color: #fff;
+}
+
+#button:active:after {
+    background: transparent;
+}
+
+#button:hover:before {
+    opacity: 1;
+}
+
+#button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.roboto-flex-unique {
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0,
+      "wdth" 100,
+      "GRAD" 0,
+      "XOPQ" 96,
+      "XTRA" 468,
+      "YOPQ" 79,
+      "YTAS" 750,
+      "YTDE" -203,
+      "YTFI" 738,
+      "YTLC" 514,
+      "YTUC" 712;
+}
+body {
+    font-family: "Roboto Flex", sans-serif;
+    background: #6198EA;
+    background: radial-gradient(circle, rgba(97, 152, 234, 1) 0%, rgba(97, 229, 234, 1) 100%);
+    padding: 20px;
+}
+#postInput {
+    border-radius: 10%;
+    background: #fff;
+    padding: 5px;
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#postInput:hover,
+#postInput:focus {
+    border-radius: 15px 50px;
+    padding: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+}
+
+#postInput:not(:hover):not(:focus) {
+    border-radius: 5%;
+    padding: 5px;
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+}
+#feed {
+    margin-top: 30px;
+    background: #fff;
+}
+
+#feed {
+    margin-top: 30px;
+    background: #f5f8fa;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#post-template {
+    display: none; /* Hide the template element */
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.post .username {
+    font-weight: bold;
+    color: #1da1f2;
+    margin-bottom: 5px;
+}
+
+.post .message {
+    color: #14171a;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.post .timestamp {
+    font-size: 12px;
+    color: #657786;
+    text-align: right;
+}
+
+.post hr {
+    border: none;
+    border-top: 1px solid #e1e8ed;
+    margin: 10px 0 0 0;
+}
+
+.img-container {
+    text-align: center;
+  }
+  
+  .top-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }

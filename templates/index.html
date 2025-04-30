@@ -3,15 +3,21 @@
   <head>
     <title>Banterbird</title>
     <script src="/static/js/app.js" defer></script>
-  </head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
   <body>
-    <h1>Banterbird</h1>
+    <div class="img-container">
+      <img src="/static/images/BanterBird.png" alt="Banterbird Screenshot" class="top-image">
+    </div>
     <div>Logged in as: <strong id="username">anonymous</strong></div>
     <div>
       <h3>New Post</h3>
       <textarea id="postInput" placeholder="What's on your mind?"></textarea
       ><br />
-      <button onclick="submitPost()">Tweet</button>
+      <button id = "button" onclick="submitPost()">Tweet</button>    
     </div>
     <hr />
     <h3>Feed</h3>
