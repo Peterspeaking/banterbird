@@ -15,7 +15,51 @@
             background-color: #15202B;
             color: #E1E8ED;
             font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
+
+        .container {
+            flex: 1;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            max-width: 95%;
+        }
+
+        #feed {
+            max-height: calc(100vh - 300px);
+            overflow-y: auto;
+        }
+
+        @media (min-width: 992px) {
+            .tweet-box-col {
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+            .feed-col {
+                flex: 0 0 70%;
+                max-width: 70%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1.display-4 {
+                font-size: 2rem;
+            }
+
+            .card {
+                margin-bottom: 1rem;
+            }
+
+            .tweet-box-col, .feed-col {
+                max-width: 100%;
+                flex: 0 0 100%;
+            }
+        }
+
         .navbar {
             background-color: #1DA1F2;
         }
@@ -49,10 +93,7 @@
         .btn-primary:hover {
             background-color: #1A91DA;
         }
-        #feed {
-            max-height: 450px;
-            overflow-y: auto;
-        }
+
         .post {
             background-color: #253341;
             border: none;
@@ -70,6 +111,7 @@
             font-size: 0.75rem;
             color: #8899A6;
         }
+
     </style>
 </head>
 <body>
@@ -87,17 +129,17 @@
 </nav>
 
 <!-- Main Content -->
-<div class="container mt-5">
+<div class="container mt-3">
     <div class="text-center mb-4">
         <h1 class="display-4">Welcome to Banterbird</h1>
         <p class="lead text-muted">Where thoughts take flight</p>
         <div>Logged in as: <strong id="username">User</strong></div>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row">
         <!-- Tweet Box -->
-        <div class="col-md-4 mb-4">
-            <div class="card p-3">
+        <div class="col-lg-4 mb-4">
+            <div class="card p-3 h-100">
                 <h5 class="card-title text-white">Compose a Tweet</h5>
                 <textarea class="form-control mb-3" id="postInput" rows="4" placeholder="What's on your mind?"></textarea>
                 <button class="btn btn-primary btn-block" onclick="submitPost()">Tweet</button>
@@ -105,24 +147,25 @@
         </div>
 
         <!-- Feed -->
-        <div class="col-md-5">
-            <div class="card p-3">
+        <div class="col-lg-8">
+            <div class="card p-3 h-100">
                 <h5 class="card-title text-white">Your Feed</h5>
                 <div id="feed" class="list-group">
                     <!-- Dynamic posts will be injected here -->
                 </div>
             </div>
         </div>
-
-        <template id="post-template">
-            <div class="post list-group-item">
-                <p><strong class="timestamp"></strong></p>
-                <p><strong class="username"></strong>: <span class="message"></span></p>
-                <small class="timestamp"></small>
-            </div>
-        </template>
     </div>
+
+    <template id="post-template">
+        <div class="post list-group-item">
+            <p><strong class="timestamp"></strong></p>
+            <p><strong class="username"></strong>: <span class="message"></span></p>
+            <small class="timestamp"></small>
+        </div>
+    </template>
 </div>
+
 
 <!-- Scripts -->
 <script
