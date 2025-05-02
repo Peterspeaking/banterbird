@@ -1,7 +1,7 @@
-let username = localStorage.getItem("username");
+let username = localStorage.getItem("username") || null;
 if (!username) {
-    window.location.href = "/login.html";
-
+    window.location.href = "/login";
+}
 function renderPost(post, isnwew = false) {
     const template = document
         .getElementById("post-template")

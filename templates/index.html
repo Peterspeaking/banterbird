@@ -8,7 +8,7 @@
 <body>
     <h1>Banterbird</h1>
     <div>
-        Logged in as: <strong id="username">admin</strong>
+        Logged in as: <strong id="username">Bob</strong>
     </div>
     <div>
         <h3>New Post</h3>
@@ -26,5 +26,8 @@
             <hr>
         </div>
     </template>
+    <script>
+        document.getElementById("username").innerText = localStorage.getItem("username");
+    </script>
 </body>
 </html>
