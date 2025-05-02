@@ -4,6 +4,7 @@ window.onload = () => {
 
     form.addEventListener("submit", async function(event){
         event.preventDefault();
+        const error = document.getElementById('error_message');
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         const data = {"username": username, "password": password};
@@ -21,7 +22,14 @@ window.onload = () => {
             })
             const data = await response.json();
             if (!response.ok) {
-                console.error("Error occurred. Please try again later.");
+                console.error("Error occurred: ", response.statusText);
+                if (response.status === 401) {
+                    error.innerText = "Wrong username or password";
+                    error.style.color = "red";
+                    setTimeout(() => {
+                        error.innerText = "";
+                    }, 5000);
+                }
                 return;
             }
             console.log("good");
