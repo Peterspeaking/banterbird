@@ -1,21 +1,32 @@
 /* style.css */
-h1 {
-    align-self: center;
+title {
+    font-family: Playwright RO;
+    color: #9861ea;
 }
 
 body {
     font-family: oswald;
     color: #6198ea;
     padding: 20px;
-    background-color:beige   
+    background-color:beige; 
+    color: #6198ea;  
 }
-
+#postInput {
+    font-family: oswald;
+    color: #6198ea;
+}
+button {
+    font-family: oswald;
+    color: #6198ea;
+}
+#id {
+    font-family: oswald;
+    color: #6198ea; 
+}
+.class {
+    text-align: center
+}
 #feed {
-    margin-top: 30px;
-    margin-bottom: 100px;
-    margin-right: 150px;
-    margin-left: 80px;
-
     padding-top:30
     padding-right
     padding-bottom
