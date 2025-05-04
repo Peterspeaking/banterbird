@@ -3,11 +3,11 @@ h1 {
     align-self: center;
 }
 
-#body {
+body {
     font-family: oswald;
-    background-color: #6198ea;
+    color: #6198ea;
     padding: 20px;
-    
+    background-color:beige   
 }
 
 #feed {
@@ -20,9 +20,4 @@ h1 {
     padding-right
     padding-bottom
     padding-left
-  
 }
-p {
-    border: 2px solid powderblue;
-    padding: 30px;
-  }
