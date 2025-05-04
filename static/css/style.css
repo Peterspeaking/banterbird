@@ -1,7 +1,7 @@
 /* style.css */
 
 body {
-    font-family: sans-serif;
+    font-family: monospace;
     background-color: #6198ea;
     padding: 20px;
 }
@@ -9,3 +9,7 @@ body {
 #feed {
     margin-top: 30px;
 }
+p {
+    border: 2px solid powderblue;
+    padding: 30px;
+  }

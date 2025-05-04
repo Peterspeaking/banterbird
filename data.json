@@ -1,6 +1,10 @@
 [
     {
         "username": "admin",
+        "message": "retest"
+    },
+    {
+        "username": "admin",
         "message": "whats on you mind"
     },
     {
