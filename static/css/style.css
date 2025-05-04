@@ -1,6 +1,6 @@
 /* style.css */
 h1 {
-    font-family: Playwright RO;
+    font-family: Playwright Romania;
     color: #9861ea;
 }
 
@@ -15,13 +15,13 @@ body {
     font-family: oswald;
     color: #6198ea;
 }
-button {
-    font-family: oswald;
-    color: #6198ea;
-}
 #id {
     font-family: oswald;
     color: #6198ea; 
+}
+.better {
+    font-family: oswald;
+    color: #6198ea;
 }
 .class {
     text-align: center
