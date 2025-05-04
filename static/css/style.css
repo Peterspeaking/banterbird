@@ -1,13 +1,26 @@
 /* style.css */
+h1 {
+    align-self: center;
+}
 
-body {
-    font-family: monospace;
+#body {
+    font-family: oswald;
     background-color: #6198ea;
     padding: 20px;
+    
 }
 
 #feed {
     margin-top: 30px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+
+    padding-top:30
+    padding-right
+    padding-bottom
+    padding-left
+  
 }
 p {
     border: 2px solid powderblue;
