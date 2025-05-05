@@ -1,4 +1,5 @@
 let username = "";
+const socket = io()
 // Checks login Status
 let logged_in = confirm_login();
 console.log(logged_in);
@@ -113,12 +114,11 @@ async function show_posts() {
 
 
 
-
+socket.on("new_post", async () => {
+    console.log("New Post");
+    await show_posts();
+})
 
 window.onload = async function() {
     await show_posts();
-    while (true) {
-        await sleep(5);
-        await show_posts();
-    }
 };

@@ -1,5 +1,6 @@
 from time import time
 from flask import Flask, render_template, jsonify, request, g
+from flask_socketio import SocketIO, emit
 import json
 import hashlib
 from os import urandom
@@ -8,9 +9,13 @@ import sqlite3
 from typing import Optional
 
 app = Flask(__name__)
+socketio = SocketIO(app)
+
 database_path = "clients.db"
+connected_clients = set()
 
 
+# Functions
 def get_db():
     if "db" not in g:
         g.db = sqlite3.connect("clients.db")
@@ -27,7 +32,6 @@ def generate_salt() -> bytes:
     salt = urandom(16)
     return salt
 
-
 def hash_password( password: str, salt: Optional[bytes] = None) -> tuple[str, bytes, str, int]:
     if salt is None:
         salt = generate_salt()
@@ -43,7 +47,6 @@ def hash_password( password: str, salt: Optional[bytes] = None) -> tuple[str, by
     ).decode("utf-8")
     return_value = (hash_value, salt, function, iterations)
     return return_value
-
 
 
 # Webpage
@@ -64,7 +67,7 @@ def new_account():
 def logout():
     return render_template("logout.html")
 
-# Other
+# api routes
 @app.route('/api/posts', methods=['GET'])
 def get_posts():
     with open("posts.json", "r") as file:
@@ -81,6 +84,7 @@ def add_posts():
     with open("posts.json", "w") as file:
         json.dump(posts, file, indent=4)
 
+    socketio.emit("new_post")
     return jsonify({"status": "success"}), 201
 
 @app.route('/api/login', methods=['POST'])
@@ -125,6 +129,8 @@ def register_data():
         print(e)
         return jsonify({"status": "fail"}), 500
 
+
+
 if __name__ == '__main__':
     with app.app_context():
         db = get_db()
@@ -143,4 +149,4 @@ if __name__ == '__main__':
         db.commit()
         db.close()
         print("Table created successfully")
-    app.run(debug=True)
+    socketio.run(app, debug=True)
