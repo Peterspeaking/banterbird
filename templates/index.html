@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Banterbird</title>
+    <title>YapperJay</title>
     <script src="/static/js/app.js" defer></script>
+
+    <link rel="stylesheet" href="/static/css/myStyle.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Banterbird</h1>
-    <div>
-        Logged in as: <strong id="username">admin</strong>
+    <h1>YapperJay</h1>
+    
+    <div class="loggedIn">
+        Logged in as: <strong id="username">Bob</strong>
     </div>
     <div>
         <h3>New Post</h3>
         <textarea id="postInput" placeholder="What's on your mind?"></textarea><br>
         <button onclick="submitPost()">Tweet</button>
     </div>
-    <hr>
     <h3>Feed</h3>
     <div id="feed"></div>
 
@@ -22,8 +32,10 @@
         <div class="post">
             <p><strong class="username"></strong>: <span class="message"></span></p>
             <small class="timestamp"></small>
-            <hr>
         </div>
     </template>
+    <script>
+        document.getElementById("username").innerText = localStorage.getItem("username");
+    </script>
 </body>
 </html>
