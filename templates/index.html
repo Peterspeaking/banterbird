@@ -2,16 +2,26 @@
 <html>
 <head>
     <title>Banterbird</title>
+    <link rel="stylesheet" href="/static/css/style.css"><!--creating a hyperlink inside the website to a stylesheet page for this index page-->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap" rel="stylesheet">
+
     <script src="/static/js/app.js" defer></script>
 </head>
 <body>
-    <h1>Banterbird</h1>
-    <div>
+    <h1> Banterbird</h1>
+    <div class="fancy" >
         Logged in as: <strong id="username">admin</strong>
     </div>
-    <div>
-        <h3>New Post</h3>
-        <textarea id="postInput" placeholder="What's on your mind?"></textarea><br>
+    <div id="better">
+        <h3 class="fancy">New Post</h3>
+        <textarea id="postInput" placeholder="What's on your mind?" id="better"></textarea><br>
         <button onclick="submitPost()">Tweet</button>
     </div>
     <hr>

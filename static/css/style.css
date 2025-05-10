@@ -1,0 +1,34 @@
+/* style.css */
+h1 {
+    font-family: Playwright Romania;
+    color: #9861ea;
+}
+
+body {
+    font-family: oswald;
+    color: #6198ea;
+    padding: 20px;
+    background-color:beige; 
+    color: #6198ea;  
+}
+#postInput {
+    font-family: oswald;
+    color: #6198ea;
+}
+#id {
+    font-family: oswald;
+    color: #6198ea; 
+}
+.better {
+    font-family: oswald;
+    color: #6198ea;
+}
+.class {
+    text-align: center
+}
+#feed {
+    padding-top:30
+    padding-right
+    padding-bottom
+    padding-left
+}
